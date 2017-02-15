@@ -1,17 +1,14 @@
 <?php
 require 'TodoItem.php';
 
-class TodoList
-{
-    public $items = [];
+class TodoList {
 
-    public function add($item)
-    {
+    public $items = [];
+    public function add($item) {
         $this->items[] = new TodoItem($item);
     }
 
-    public function printList()
-    {
+    public function printList() {
         echo 'Todos:' . PHP_EOL;
 
         $length = count($this->items);
@@ -20,8 +17,7 @@ class TodoList
         }
     }
 
-    private function formatTodoItem(TodoItem $todoItem)
-    {
+    private function formatTodoItem(TodoItem $todoItem) {
         return '  - ' . $todoItem->getTitle();
     }
 }
